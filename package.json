@@ -1,0 +1,31 @@
+{
+  "name": "pharmacy-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "yarn install",
+    "build": "yarn workspaces run build",
+    "build:common": "yarn workspace @pharmacy-management-system/common build",
+    "start:dev": "yarn workspaces run start:dev",
+    "start:auth": "yarn workspace @pharmacy-management-system/auth-service start:dev",
+    "start:user": "yarn workspace @pharmacy-management-system/user-service start:dev",
+    "start:shop": "yarn workspace @pharmacy-management-system/shop-service start:dev",
+    "start:gateway": "yarn workspace @pharmacy-management-system/api-gateway start:dev",
+    "start:all": "concurrently \"yarn start:auth\" \"yarn start:user\" \"yarn start:shop\" \"yarn start:gateway\"",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down -v",
+    "lint": "yarn workspaces run lint",
+    "test": "yarn workspaces run test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.0"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/anonto42/Pharmacy-Management-System.git",
+  "author": "Sohidul Islam Ananto <anontom90@gmail.com>",
+  "license": "MIT"
+}
