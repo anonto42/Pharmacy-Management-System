@@ -1,0 +1,6 @@
+export enum ServiceName {
+    AUTH = 'AUTH_SERVICE',
+    USER = 'USER_SERVICE',
+    SHOP = 'SHOP_SERVICE',
+    NOTIFICATION = 'NOTIFICATION_SERVICE'
+}
