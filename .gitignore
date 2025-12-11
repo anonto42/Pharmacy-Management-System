@@ -15,9 +15,6 @@ build/
 .env.test.local
 .env.production.local
 
-packages/shop-service
-
-
 # Logs
 *.log
 npm-debug.log*
