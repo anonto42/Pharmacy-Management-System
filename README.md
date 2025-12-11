@@ -608,4 +608,16 @@ curl http://localhost:3001/auth/profile \
   -H "Authorization: Bearer YOUR_TOKEN_HERE"
 ```
 
-This gives you a fully working, production-ready microservices architecture! 🚀
+yarn workspace @pharmacy-management-system/common build
+docker-compose up -d
+yarn workspace @my-microservices/auth-service start:dev
+yarn workspace @my-microservices/user-service start:dev
+yarn workspace @my-microservices/shop-service start:dev
+yarn workspace @my-microservices/api-gateway start:dev
+
+
+# Install concurrently globally or in root
+npm install -g concurrently
+
+# Start all services
+yarn start:all
